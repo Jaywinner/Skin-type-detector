@@ -1,0 +1,13 @@
+﻿# Ignore node modules and build artifacts
+node_modules/
+dist/
+/frontend/dist/
+.vscode/
+.venv/
+.env
+*.log
+*.pyc
+__pycache__/
+*.cache
+npm-debug.log
+.DS_Store
