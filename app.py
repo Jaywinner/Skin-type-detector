@@ -32,5 +32,8 @@ def serve(path):
 
 
 if __name__ == '__main__':
-    # Use 0.0.0.0 so it's reachable from other machines if deployed in a container
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    # On Render (and other PaaS) the port is provided in the PORT env var.
+    # Default to 5000 for local development.
+    port = int(os.environ.get('PORT', 5000))
+    # Disable debug mode when running the production server entrypoint.
+    app.run(host='0.0.0.0', port=port, debug=False)
